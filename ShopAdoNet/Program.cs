@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -25,7 +24,7 @@ namespace ShopAdoNet
             //Вставка новой категории
             var newCategoryId = categoriesCount + 1;
             var insertNewCategoryQuery = @"INSERT INTO [Shop].[Categories] ([Name])
-                                           VALUES (CONCAT('Category ', @newCategoryId))";
+                                           VALUES (CONCAT(N'Category ', @newCategoryId))";
             var insertNewCategoryCmd = new SqlCommand(insertNewCategoryQuery);
             insertNewCategoryCmd.Parameters.Add(new SqlParameter("@newCategoryId", newCategoryId) { SqlDbType = SqlDbType.Int });
             Database.ExecuteNonQuery(insertNewCategoryCmd, connectionString);
@@ -34,7 +33,7 @@ namespace ShopAdoNet
             //Вставка нового продукта
             var newProductId = productsCount + 1;
             var insertNewProductQuery = @"INSERT INTO [Shop].[Products] ([CategoryId], [Name])
-                                          VALUES (@newCategoryId, CONCAT('Product ', @newProductId))";
+                                          VALUES (@newCategoryId, CONCAT(N'Product ', @newProductId))";
             var insertNewProductCmd = new SqlCommand(insertNewProductQuery);
             insertNewProductCmd.Parameters.Add(new SqlParameter("@newCategoryId", newCategoryId) { SqlDbType = SqlDbType.Int });
             insertNewProductCmd.Parameters.Add(new SqlParameter("@newProductId", newProductId) { SqlDbType = SqlDbType.Int });
@@ -44,7 +43,7 @@ namespace ShopAdoNet
             //Обновление нового продукта
             var updateNewProductQuery = @"UPDATE [Shop].[Products]
                                           SET [Name] = @newValue
-                                          WHERE [Name] = CONCAT('Product ', @newProductId)";
+                                          WHERE [Name] = CONCAT(N'Product ', @newProductId)";
             var updateNewProductCmd = new SqlCommand(updateNewProductQuery);
             updateNewProductCmd.Parameters.Add(new SqlParameter("@newProductId", newProductId) { SqlDbType = SqlDbType.Int });
             updateNewProductCmd.Parameters.Add(new SqlParameter("@newValue", "To remove") { SqlDbType = SqlDbType.NVarChar });

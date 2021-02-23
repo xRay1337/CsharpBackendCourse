@@ -1,19 +1,10 @@
-﻿using System;
-using System.Data;
+﻿using System.Data;
 using System.Data.SqlClient;
 
 namespace ShopAdoNet
 {
     internal static class Database
     {
-        //private static void Execute<T>(Func<SqlCommand, T> func)
-        //{
-        //    using (var connection = new SqlConnection())
-        //    {
-
-        //    }
-        //}
-
         internal static int ExecuteNonQuery(SqlCommand command, string connectionStringName)
         {
             using (var connection = new SqlConnection(connectionStringName))
