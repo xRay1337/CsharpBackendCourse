@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "GqWetMGw4aYUaFiTEknziSO+KDkJzb/LOF767HUfjO+8XV/FYVWCP5CHu9bbpS0WcnQcp38H7hM9f/B7qTOpTA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\zlovi\\source\\CsharpBackendCourse\\Json\\Json.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\zlovi\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\zlovi\\.nuget\\packages\\nlog\\4.7.7\\nlog.4.7.7.nupkg.sha512"
+  ],
+  "logs": []
+}
